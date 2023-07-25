@@ -43,7 +43,7 @@ class _CharacterscreenState extends State<Characterscreen> {
             character.name!.toLowerCase().startsWith(searchedChar))
         .toList();
     Logger().d(searchedChar.isEmpty);
-    if (searchedChar.isEmpty) {
+    if (searchedChars.isEmpty) {
       isFound = false;
     } else {
       isFound = true;
@@ -56,7 +56,7 @@ class _CharacterscreenState extends State<Characterscreen> {
     return const Center(
       child: Text(
         "No results found",
-        style: TextStyle(color: MyColors.myGray, fontSize: 18),
+        style: TextStyle(fontSize: 18, color: Colors.white),
       ),
     );
   }
@@ -147,8 +147,6 @@ class _CharacterscreenState extends State<Characterscreen> {
               crossAxisSpacing: 1,
               mainAxisSpacing: 1,
             ),
-
-            shrinkWrap: true,
             physics: const ClampingScrollPhysics(),
             padding: EdgeInsets.zero,
             itemCount: _searcheText.text.isEmpty
